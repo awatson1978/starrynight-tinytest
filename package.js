@@ -1,13 +1,19 @@
 Package.describe({
-  name: 'peterellisjones:describe',
-  summary: "Drop-in replacement for Meteor Tinytest to support 'describe', 'context' and 'it' blocks",
+  name: 'starrynight:tinytest',
+  summary: "Better Tinytests with 'describe', 'it', and chai assertions.",
   version: '1.0.2',
-  git: 'https://github.com/peterellisjones/describe.git'
+  git: 'https://github.com/awatson1978/starrynight-tinytest.git'
 });
+
+
+Npm.depends({"chai": "2.2.0"});
 
 Package.onUse(function(api) {
   api.versionsFrom('1.0');
   api.use('tinytest');
+  api.use('chai');
   api.addFiles('peterellisjones:describe.js');
   api.export('describe');
+  api.export(['chai','assert','expect','should']);
 });
+
